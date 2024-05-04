@@ -55,8 +55,8 @@ import {
 } from "context";
 
 // Images
-import team2 from "assets/images/team-2.jpg";
-import logoSpotify from "assets/images/small-logos/logo-spotify.svg";
+import logo from "assets/images/logo-ptit.jpg";
+
 
 function DashboardNavbar({ absolute, light, isMini }) {
   const [navbarType, setNavbarType] = useState();
@@ -110,18 +110,13 @@ function DashboardNavbar({ absolute, light, isMini }) {
       sx={{ mt: 2 }}
     >
       <NotificationItem
-        image={<img src={team2} alt="person" />}
-        title={["New message", "from Laur"]}
+        image={<img src={logo} alt="person" />}
+        title={["New message", "from..."]}
         date="13 minutes ago"
         onClick={handleCloseMenu}
       />
-      <NotificationItem
-        image={<img src={logoSpotify} alt="person" />}
-        title={["New album", "by Travis Scott"]}
-        date="1 day"
-        onClick={handleCloseMenu}
-      />
-      <NotificationItem
+
+      {/* <NotificationItem
         color="secondary"
         image={
           <Icon fontSize="small" sx={{ color: ({ palette: { white } }) => white.main }}>
@@ -131,7 +126,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
         title={["", "Payment successfully completed"]}
         date="2 days"
         onClick={handleCloseMenu}
-      />
+      /> */}
     </Menu>
   );
 
@@ -154,7 +149,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
               />
             </SoftBox>
             <SoftBox color={light ? "white" : "inherit"}>
-              <Link to="/authentication/sign-in">
+              <Link to="/sign-in">
                 <IconButton sx={navbarIconButton} size="small">
                   <Icon
                     sx={({ palette: { dark, white } }) => ({

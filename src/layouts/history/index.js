@@ -16,32 +16,26 @@ Coded by www.creative-tim.com
 // @mui material components
 
 
-// @mui icons
-
-
 // Soft UI Dashboard React components
 
 
-// Soft UI Dashboard React examples
-import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
+// Soft UI Dashboard React base styles
+import typography from "assets/theme/base/typography";
 
+// VR dashboards components
+import DashboardNavbar from "examples/Navbars/DashboardNavbar";
+import DashboardLayout from "examples/LayoutContainers/DashboardLayout"
+import ListQuizz from "layouts/history/components/ListQuizz"
 
-// Overview page components
-import Header from "layouts/profile/components/Header";
+function History() {
+  const { d1, h2, fontWeightMedium } = typography;
 
-
-// Data
-
-
-// Images
-
-
-function Profile() {
   return (
     <DashboardLayout>
-      <Header />
+    <DashboardNavbar />
+    <ListQuizz/>
     </DashboardLayout>
   );
 }
 
-export default Profile;
+export default History;

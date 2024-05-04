@@ -16,7 +16,7 @@ Coded by www.creative-tim.com
 // @mui material components
 
 
-// @mui icons
+// Soft UI Dashboard React components
 
 
 // Soft UI Dashboard React components
@@ -24,24 +24,21 @@ Coded by www.creative-tim.com
 
 // Soft UI Dashboard React examples
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
 
-// Overview page components
-import Header from "layouts/profile/components/Header";
+// Billing page components
+import QuizzInformation from "./components/QuizzInformation";
 
 
-// Data
 
-
-// Images
-
-
-function Profile() {
+function Library() {
   return (
     <DashboardLayout>
-      <Header />
+      <DashboardNavbar />
+      <QuizzInformation/>
     </DashboardLayout>
   );
 }
 
-export default Profile;
+export default Library;

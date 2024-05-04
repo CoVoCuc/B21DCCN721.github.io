@@ -16,32 +16,35 @@ Coded by www.creative-tim.com
 // @mui material components
 
 
-// @mui icons
-
-
 // Soft UI Dashboard React components
 
 
 // Soft UI Dashboard React examples
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
 
-// Overview page components
-import Header from "layouts/profile/components/Header";
+// Soft UI Dashboard React base styles
 
+
+// Dashboard layout components
+
+
+
+
+import TestCreationForm from "layouts/newquizz/components/CreateTest"
 
 // Data
 
 
-// Images
+function NewQuizz() {
 
-
-function Profile() {
   return (
     <DashboardLayout>
-      <Header />
+      <DashboardNavbar />
+      <TestCreationForm/>
     </DashboardLayout>
   );
 }
 
-export default Profile;
+export default NewQuizz;
