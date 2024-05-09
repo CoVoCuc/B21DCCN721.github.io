@@ -29,7 +29,7 @@ function QuizzInformation() {
     <Card id="delete-account">
       <SoftBox pt={3} px={2}>
         <SoftTypography variant="h6" fontWeight="medium">
-          Danh sách bài thi đã làm
+          Danh sách bài thi đã tạo
         </SoftTypography>
       </SoftBox>
       <Divider/>

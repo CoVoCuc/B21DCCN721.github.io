@@ -12,30 +12,58 @@ Coded by www.creative-tim.com
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
+import { Link } from 'react-router-dom';
 
 // @mui material components
-
+import Card from "@mui/material/Card";
 
 // Soft UI Dashboard React components
+import SoftBox from "components/SoftBox";
+import SoftTypography from "components/SoftTypography";
+import SoftButton from 'components/SoftButton';
 
-
-// Soft UI Dashboard React base styles
-import typography from "assets/theme/base/typography";
-
-// VR dashboards components
+// Soft UI Dashboard React examples
+import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import DashboardLayout from "examples/LayoutContainers/DashboardLayout"
-import ListQuizz from "layouts/history/components/ListQuizz"
+import Table from "examples/Tables/Table";
+
+// Data
+import quizzsCompleteData from './data/quizzsCompleteData';
+
+
 
 function History() {
-  const { d1, h2, fontWeightMedium } = typography;
+  const { columns, rows } = quizzsCompleteData;
 
   return (
     <DashboardLayout>
-    <DashboardNavbar />
-    <ListQuizz/>
+      <DashboardNavbar />
+      <SoftBox py={3}>
+        <SoftBox mb={3}>
+          <Card>
+            <SoftBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
+              <SoftTypography variant="h6">Danh sách môn thi</SoftTypography>
+            </SoftBox>
+            <SoftBox
+              sx={{
+                "& .MuiTableRow-root:not(:last-child)": {
+                  "& td": {
+                    borderBottom: ({ borders: { borderWidth, borderColor } }) =>
+                      `${borderWidth[1]} solid ${borderColor}`,
+                  },
+                },
+              }}
+            >
+              <Table columns={columns} rows={rows.map((row) => ({
+                ...row,
+              }))} />
+            </SoftBox>
+          </Card>
+        </SoftBox>
+      </SoftBox>
     </DashboardLayout>
   );
 }
+
 
 export default History;

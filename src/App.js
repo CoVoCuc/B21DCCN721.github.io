@@ -45,6 +45,9 @@ import routes from "routes";
 // Soft UI Dashboard React contexts
 import { useSoftUIController, setMiniSidenav, setOpenConfigurator } from "context";
 
+import ListQuizz from "layouts/listquizz";
+import QuizzPage from "./layouts/listquizz/component/QuizzPage";
+
 // Images
 import brand from "assets/images/logo-ct.png";
 
@@ -153,6 +156,9 @@ export default function App() {
         {layout === "vr" && <Configurator />}
         <Routes>
           {getRoutes(routes)}
+          <Route path="/" element={<Navigate to="/list-quizzs" />} /> 
+          <Route path="/list-quizzs" element={<ListQuizz />} />
+          <Route path="/list-quizzs/:quizId" element={<QuizzPage />} />
           <Route path="*" element={<Navigate to="/new-quizz" />} />
         </Routes>
       </ThemeProvider>
@@ -177,6 +183,9 @@ export default function App() {
       {layout === "vr" && <Configurator />}
       <Routes>
         {getRoutes(routes)}
+        <Route path="/" element={<Navigate to="/list-quizzs" />} />
+        <Route path="/list-quizzs" element={<ListQuizz />} />
+        <Route path="/list-quizzs/:quizId" element={<QuizzPage />} /> 
         <Route path="*" element={<Navigate to="/new-quizz" />} />
       </Routes>
     </ThemeProvider>

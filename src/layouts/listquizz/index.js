@@ -12,6 +12,7 @@ Coded by www.creative-tim.com
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
+import { Link } from 'react-router-dom';
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -19,6 +20,7 @@ import Card from "@mui/material/Card";
 // Soft UI Dashboard React components
 import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
+import SoftButton from 'components/SoftButton';
 
 // Soft UI Dashboard React examples
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
@@ -26,12 +28,12 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Table from "examples/Tables/Table";
 
 // Data
-import authorsTableData from "layouts/listquizz/data/authorsTableData";
+import quizzsTableData from "layouts/listquizz/data/quizzsTableData";
+
 
 
 function ListQuizz() {
-  const { columns, rows } = authorsTableData;
-
+  const { columns, rows } = quizzsTableData;
 
   return (
     <DashboardLayout>
@@ -52,7 +54,20 @@ function ListQuizz() {
                 },
               }}
             >
-              <Table columns={columns} rows={rows} />
+              <Table columns={columns} rows={rows.map((row, index) => ({
+                ...row,
+                "Làm bài": (
+                  <SoftTypography
+                    component={Link}
+                    to={`/list-quizzs/${index}`} // Tạo đường dẫn tới trang bài thi
+                    variant="caption"
+                    color="secondary"
+                    fontWeight="medium"
+                  >
+                    <SoftButton>Làm bài</SoftButton>
+                  </SoftTypography>
+                ),
+              }))} />
             </SoftBox>
           </Card>
         </SoftBox>
@@ -60,5 +75,6 @@ function ListQuizz() {
     </DashboardLayout>
   );
 }
+
 
 export default ListQuizz;

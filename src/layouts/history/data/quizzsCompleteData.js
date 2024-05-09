@@ -7,7 +7,7 @@ import SoftButton from "components/SoftButton";
 // Images
 import logo from "assets/images/logo-ptit.jpg";
 
-function Author({ image, name }) {
+function Quizz({ image, name }) {
   return (
     <SoftBox display="flex" alignItems="center" px={1} py={0.5}>
       <SoftBox mr={2}>
@@ -32,44 +32,51 @@ function MoTa({ detail }) {
   );
 }
 
-const authorsTableData = {
+const quizzsCompleteData = {
   columns: [
     { name: "Tên bài thi", align: "left" },
     { name: "Mô tả", align: "left" },
-    { name: "Làm bài", align: "center" },
-    { name: "action", align: "center"}
+    { name: "Điểm số", align: "center" },
   ],
 
   rows: [
     {
-      "Tên bài thi": <Author image={logo} name="Tên bài thi"  />,
-      "Mô tả": <MoTa detail="Chi tiết môn thi"/>,
-      
-      "Làm bài": (
+      "Tên bài thi": <Quizz image={logo} name="Tên bài thi" />,
+      "Mô tả": <MoTa detail="Chi tiết môn thi" />,
+
+      "Điểm số": (
         <SoftTypography
-          component="a"
-          href="#"
           variant="caption"
           color="secondary"
           fontWeight="medium"
         >
-          <SoftButton>Làm bài</SoftButton>
+          <SoftBox display="flex" flexDirection="column">
+            <SoftTypography variant="caption" fontWeight="medium" color="text">
+              Điểm
+            </SoftTypography>
+          </SoftBox>
         </SoftTypography>
       ),
-      action: (
+    },
+    {
+      "Tên bài thi": <Quizz image={logo} name="Tên bài thi" />,
+      "Mô tả": <MoTa detail="Chi tiết môn thi" />,
+
+      "Điểm số": (
         <SoftTypography
-          component="a"
-          href="#"
           variant="caption"
           color="secondary"
           fontWeight="medium"
         >
-          <SoftButton color="dark" onClick={()=>console.log('abc')}>Thích</SoftButton>
-          <SoftButton color="error">Tố cáo</SoftButton>
+          <SoftBox display="flex" flexDirection="column">
+            <SoftTypography variant="caption" fontWeight="medium" color="text">
+              Điểm
+            </SoftTypography>
+          </SoftBox>
         </SoftTypography>
       ),
-    }
-  ]
+    },
+  ],
 };
 
-export default authorsTableData;
+export default quizzsCompleteData;
