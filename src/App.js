@@ -47,6 +47,8 @@ import { useSoftUIController, setMiniSidenav, setOpenConfigurator } from "contex
 
 import ListQuizz from "layouts/listquizz";
 import QuizzPage from "./layouts/listquizz/component/QuizzPage";
+import History from "layouts/history";
+import FixQuizz from "layouts/library/components/FixQuizz";
 
 // Images
 import brand from "assets/images/logo-ct.png";
@@ -156,10 +158,11 @@ export default function App() {
         {layout === "vr" && <Configurator />}
         <Routes>
           {getRoutes(routes)}
-          <Route path="/" element={<Navigate to="/list-quizzs" />} /> 
-          <Route path="/list-quizzs" element={<ListQuizz />} />
-          <Route path="/list-quizzs/:quizId" element={<QuizzPage />} />
-          <Route path="*" element={<Navigate to="/new-quizz" />} />
+          <Route path="/" element={<Navigate to="/list-quizz" />} /> 
+          <Route path="/list-quizz" element={<ListQuizz />} />
+          <Route path="/list-quizz/:quizzId" element={<QuizzPage />} />
+          <Route path="/library/:quizzId" element={<FixQuizz/>} />
+          <Route path="*" element={<Navigate to="/list-quizz" />} />
         </Routes>
       </ThemeProvider>
     </CacheProvider>
@@ -183,10 +186,11 @@ export default function App() {
       {layout === "vr" && <Configurator />}
       <Routes>
         {getRoutes(routes)}
-        <Route path="/" element={<Navigate to="/list-quizzs" />} />
-        <Route path="/list-quizzs" element={<ListQuizz />} />
-        <Route path="/list-quizzs/:quizId" element={<QuizzPage />} /> 
-        <Route path="*" element={<Navigate to="/new-quizz" />} />
+        <Route path="/" element={<Navigate to="/list-quizz" />} />
+        <Route path="/list-quizz" element={<ListQuizz />} />
+        <Route path="/list-quizz/:quizzId" element={<QuizzPage />} /> 
+        <Route path="/library/:quizzId" element={<FixQuizz/>} />
+        <Route path="*" element={<Navigate to="/list-quizz" />} />
       </Routes>
     </ThemeProvider>
   );

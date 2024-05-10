@@ -20,27 +20,19 @@ import Divider from "@mui/material/Divider";
 // Soft UI Dashboard React components
 import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
+import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 
 
 
 
-function QuizzInformation() {
+function FixQuizz() {
   return (
-    <Card id="delete-account">
-      <SoftBox pt={3} px={2}>
-        <SoftTypography variant="h6" fontWeight="medium">
-          Danh sách bài thi đã tạo
-        </SoftTypography>
+    <DashboardLayout>
+      <SoftBox>
+        <h1>Form sửa bài thi</h1>
       </SoftBox>
-      <Divider/>
-      <SoftBox pt={1} pb={2} px={2}>
-        <SoftBox component="ul" display="flex" flexDirection="column" p={0} m={0}>
-         
-          
-        </SoftBox>
-      </SoftBox>
-    </Card>
+    </DashboardLayout>
   );
 }
 
-export default QuizzInformation;
+export default FixQuizz;

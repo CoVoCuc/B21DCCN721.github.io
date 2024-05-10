@@ -59,7 +59,7 @@ function ListQuizz() {
                 "Làm bài": (
                   <SoftTypography
                     component={Link}
-                    to={`/list-quizzs/${index}`} // Tạo đường dẫn tới trang bài thi
+                    to={`/list-quizz/${quizzsTableData.rows[index].id}`} // Tạo đường dẫn tới trang bài thi
                     variant="caption"
                     color="secondary"
                     fontWeight="medium"

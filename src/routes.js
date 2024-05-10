@@ -56,20 +56,20 @@ import Cube from "examples/Icons/Cube";
 const routes = [
   {
     type: "collapse",
+    name: "Danh sách bài thi",
+    key: "list-quizz",
+    route: "/list-quizz",
+    icon: <Office size="12px" />,
+    component: <ListQuizz />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
     name: "Tạo Quizz",
     key: "new-quizz",
     route: "/new-quizz",
     icon: <Shop size="12px" />,
     component: <NewQuizz />,
-    noCollapse: true,
-  },
-  {
-    type: "collapse",
-    name: "Danh sách bài thi",
-    key: "list-quizzs",
-    route: "/list-quizzs",
-    icon: <Office size="12px" />,
-    component: <ListQuizz />,
     noCollapse: true,
   },
   {

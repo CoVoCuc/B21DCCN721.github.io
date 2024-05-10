@@ -1,3 +1,5 @@
+
+
 /* eslint-disable react/prop-types */
 // Soft UI Dashboard React components
 import SoftBox from "components/SoftBox";
@@ -32,31 +34,19 @@ function MoTa({ detail }) {
   );
 }
 
-const quizzsTableData = {
+const quizzUpTableData = {
   columns: [
     { name: "Tên bài thi", align: "left" },
     { name: "Mô tả", align: "left" },
-    { name: "Làm bài", align: "center" },
     { name: "action", align: "center"}
   ],
 
   rows: [
-    { 
+    {
       id: 1,
       "Tên bài thi": <Quizz image={logo} name="Tên bài thi"  />,
       "Mô tả": <MoTa detail="Chi tiết môn thi"/>,
       
-      "Làm bài": (
-        <SoftTypography
-          // component="a"
-          // href="#"
-          variant="caption"
-          color="secondary"
-          fontWeight="medium"
-        >
-          <SoftButton >Làm bài</SoftButton>
-        </SoftTypography>
-      ),
       action: (
         <SoftTypography
           // component="a"
@@ -65,27 +55,16 @@ const quizzsTableData = {
           color="secondary"
           fontWeight="medium"
         >
-          <SoftButton color="dark" onClick={()=>console.log('abc')}>Thích</SoftButton>
-          <SoftButton color="error">Tố cáo</SoftButton>
+          <SoftButton color="error" onClick={()=>alert('Xác nhận xóa')}>Xóa</SoftButton>
+          <SoftButton color="dark">Sửa</SoftButton>
         </SoftTypography>
       ),
     },
-    {
+    { 
       id: 2,
       "Tên bài thi": <Quizz image={logo} name="Tên bài thi"  />,
       "Mô tả": <MoTa detail="Chi tiết môn thi"/>,
       
-      "Làm bài": (
-        <SoftTypography
-          // component="a"
-          // href="#"
-          variant="caption"
-          color="secondary"
-          fontWeight="medium"
-        >
-          <SoftButton >Làm bài</SoftButton>
-        </SoftTypography>
-      ),
       action: (
         <SoftTypography
           // component="a"
@@ -94,12 +73,12 @@ const quizzsTableData = {
           color="secondary"
           fontWeight="medium"
         >
-          <SoftButton color="dark" onClick={()=> console.log(quizzsTableData.rows[0]["id"])}>Thích</SoftButton>
-          <SoftButton color="error">Tố cáo</SoftButton>
+          <SoftButton color="error" onClick={()=>alert('Xác nhận xóa')}>Xóa</SoftButton>
+          <SoftButton color="dark">Sửa</SoftButton>
         </SoftTypography>
       ),
     }
   ]
 };
 
-export default quizzsTableData;
+export default quizzUpTableData;
