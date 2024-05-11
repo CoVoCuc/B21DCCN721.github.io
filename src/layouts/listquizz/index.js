@@ -20,7 +20,7 @@ import Card from "@mui/material/Card";
 // Soft UI Dashboard React components
 import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
-import SoftButton from 'components/SoftButton';
+import { Button } from '@mui/material';
 
 // Soft UI Dashboard React examples
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
@@ -54,20 +54,29 @@ function ListQuizz() {
                 },
               }}
             >
-              <Table columns={columns} rows={rows.map((row, index) => ({
-                ...row,
-                "Làm bài": (
-                  <SoftTypography
-                    component={Link}
-                    to={`/list-quizz/${quizzsTableData.rows[index].id}`} // Tạo đường dẫn tới trang bài thi
-                    variant="caption"
-                    color="secondary"
-                    fontWeight="medium"
-                  >
-                    <SoftButton>Làm bài</SoftButton>
-                  </SoftTypography>
-                ),
-              }))} />
+              <Table
+                columns={columns}
+                rows={rows.map((row, index) => ({
+                  ...row,
+                  "Chi tiết bài thi": (
+                    <SoftTypography
+                      component={Link}
+                      to={`/list-quizz/${quizzsTableData.rows[index].id}`} // Tạo đường dẫn tới trang bài thi
+                      variant="caption"
+                      color="secondary"
+                      fontWeight="medium"
+                    >
+                      <Button
+                        variant="outlined"
+                        sx={{ borderColor: "#333" }}
+                        style={{ color: "#505759" }}
+                      >
+                        Chi tiết
+                      </Button>
+                    </SoftTypography>
+                  ),
+                }))}
+              />
             </SoftBox>
           </Card>
         </SoftBox>

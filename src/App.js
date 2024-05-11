@@ -46,8 +46,7 @@ import routes from "routes";
 import { useSoftUIController, setMiniSidenav, setOpenConfigurator } from "context";
 
 import ListQuizz from "layouts/listquizz";
-import QuizzPage from "./layouts/listquizz/component/QuizzPage";
-import History from "layouts/history";
+import DetailQuizzPage from "./layouts/listquizz/component/DetailQuizzPage";
 import FixQuizz from "layouts/library/components/FixQuizz";
 
 // Images
@@ -137,36 +136,7 @@ export default function App() {
     </SoftBox>
   );
 
-  return direction === "rtl" ? (
-    <CacheProvider value={rtlCache}>
-      <ThemeProvider theme={themeRTL}>
-        <CssBaseline />
-        {layout === "dashboard" && (
-          <>
-            <Sidenav
-              color={sidenavColor}
-              brand={brand}
-              brandName="QUIZZ HUB"
-              routes={routes}
-              onMouseEnter={handleOnMouseEnter}
-              onMouseLeave={handleOnMouseLeave}
-            />
-            <Configurator />
-            {configsButton}
-          </>
-        )}
-        {layout === "vr" && <Configurator />}
-        <Routes>
-          {getRoutes(routes)}
-          <Route path="/" element={<Navigate to="/list-quizz" />} /> 
-          <Route path="/list-quizz" element={<ListQuizz />} />
-          <Route path="/list-quizz/:quizzId" element={<QuizzPage />} />
-          <Route path="/library/:quizzId" element={<FixQuizz/>} />
-          <Route path="*" element={<Navigate to="/list-quizz" />} />
-        </Routes>
-      </ThemeProvider>
-    </CacheProvider>
-  ) : (
+  return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       {layout === "dashboard" && (
@@ -187,8 +157,7 @@ export default function App() {
       <Routes>
         {getRoutes(routes)}
         <Route path="/" element={<Navigate to="/list-quizz" />} />
-        <Route path="/list-quizz" element={<ListQuizz />} />
-        <Route path="/list-quizz/:quizzId" element={<QuizzPage />} /> 
+        <Route path="/list-quizz/:quizzId" element={<DetailQuizzPage />} /> 
         <Route path="/library/:quizzId" element={<FixQuizz/>} />
         <Route path="*" element={<Navigate to="/list-quizz" />} />
       </Routes>

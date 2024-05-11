@@ -13,6 +13,7 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -20,7 +21,7 @@ import Card from "@mui/material/Card";
 // Soft UI Dashboard React components
 import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
-import SoftButton from 'components/SoftButton';
+import { Button } from '@mui/material';
 
 // Soft UI Dashboard React examples
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
@@ -30,11 +31,10 @@ import Table from "examples/Tables/Table";
 // Data
 import quizzUpTableData from './data/quizzUpTableData';
 
-
+import DeletionNotice from './components/DeletionNotice';
 
 function Library() {
   const { columns, rows } = quizzUpTableData;
-
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -66,10 +66,12 @@ function Library() {
                       color="secondary"
                       fontWeight="medium"
                     >
-                      <SoftButton color="error" onClick={() => alert("Xác nhận xóa")}>
-                        Xóa
-                      </SoftButton>
-                      <Link to = {`/library/${quizzUpTableData.rows[index].id}`}><SoftButton color="dark">Sửa</SoftButton></Link>
+                    
+                        <DeletionNotice/>
+
+                      <Link to={`/library/${quizzUpTableData.rows[index].id}`}>
+                        <Button variant="outlined" sx={{ borderColor: '#333'}} style={{ color: "#333", marginLeft: "5px"}}>Sửa</Button>
+                      </Link>
                     </SoftTypography>
                   ),
                 }))}
@@ -81,6 +83,5 @@ function Library() {
     </DashboardLayout>
   );
 }
-
 
 export default Library;
